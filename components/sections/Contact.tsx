@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { personalInfo } from '@/app/lib/data';
+import { personalInfo } from '@/lib/data';
 
 interface FormData {
   name: string;

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Mail, ArrowUp, Heart } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaTwitter, FaXTwitter } from 'react-icons/fa6';
-import { navItems, personalInfo } from '@/app/lib/data';
+import { navItems, personalInfo } from '@/lib/data';
 
 export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });

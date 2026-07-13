@@ -4,8 +4,8 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MapPin, CalendarDays, Briefcase, ExternalLink } from 'lucide-react';
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { experiences } from '@/app/lib/data';
-import { cn } from '@/app/lib/utils';
+import { experiences } from '@/lib/data';
+import { cn } from '@/lib/utils';
 
 function ExperienceCard({ exp, index }: { exp: typeof experiences[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);

@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import type { LucideIcon } from 'lucide-react';
 import { Monitor, Server, Smartphone, Database, Code2, Wrench } from 'lucide-react';
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { skillCategories } from '@/app/lib/data';
-import { cn } from '@/app/lib/utils';
+import { skillCategories } from '@/lib/data'
+import { cn } from '@/lib/utils';
 
 const iconMap: Record<string, LucideIcon> = {
   Monitor,

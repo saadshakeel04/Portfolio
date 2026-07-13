@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { MapPin, GraduationCap, Heart, Target, Download } from 'lucide-react';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { AnimatedCounter } from '@/components/common/AnimatedCounter';
-import { personalInfo, education } from '@/app/lib/data';
+import { personalInfo, education } from '@/lib/data';
 
 const containerVariants = {
   hidden: {},

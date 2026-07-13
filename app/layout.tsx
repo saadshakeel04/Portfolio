@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(''), // Replace with portfolio URL
+  // metadataBase: new URL(''), // Replace with portfolio URL
 
   title: {
     default: 'Saad Shakeel | Full Stack Developer',

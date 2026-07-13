@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { Moon, Sun, Menu, X, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaTwitter, FaXTwitter } from 'react-icons/fa6';
-import { navItems, personalInfo } from '@/app/lib/data';
-import { cn } from '@/app/lib/utils';
+import { navItems, personalInfo } from '@/lib/data';
+import { cn } from '@/lib/utils';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -60,8 +60,7 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-gradient-cyan">AC</span>
-            <span className="text-foreground/60 font-light ml-1">/ dev</span>
+            <span className="text-gradient-cyan">Saad</span>
           </motion.button>
 
           {/* Desktop Nav */}

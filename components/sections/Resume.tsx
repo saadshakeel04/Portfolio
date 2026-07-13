@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Download, FileText, Award, Briefcase, GraduationCap, Code2 } from 'lucide-react';
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { personalInfo, experiences, skillCategories } from '@/app/lib/data';
+import { personalInfo, experiences, skillCategories } from '@/lib/data';
 
 const highlights = [
   {

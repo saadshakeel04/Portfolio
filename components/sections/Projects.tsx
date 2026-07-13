@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { ExternalLink, Play, ArrowRight, Star } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { projects } from '@/app/lib/data';
-import { cn } from '@/app/lib/utils';
+import { projects } from '@/lib/data';
+import { cn } from '@/lib/utils';
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [hovered, setHovered] = useState(false);

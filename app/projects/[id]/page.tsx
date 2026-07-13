@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((p) => p.id === params.id);
   if (!project) return {};
   return {
-    title: `${project.title} — Alex Chen`,
+    title: `${project.title} — Saad Shakeel`,
     description: project.shortDescription,
   };
 }

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Mail, Sparkles, Code2, Zap } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaTwitter, FaXTwitter } from 'react-icons/fa6';
 import Image from 'next/image';
-import { personalInfo } from '@/app/lib/data';
+import { personalInfo } from '@/lib/data';
 
 const HeroScene = dynamic(() => import('@/components/three/HeroScene').then((m) => ({ default: m.HeroScene })), {
   ssr: false,

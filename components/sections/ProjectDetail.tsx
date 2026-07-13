@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ExternalLink, Play, CheckCircle2, Zap, ChevronLeft } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
-import type { Project } from '@/app/lib/types';
+import type { Project } from '@/lib/types';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 

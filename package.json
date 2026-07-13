@@ -11,6 +11,8 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.42.2",
     "input-otp": "^1.4.2",
     "lucide-react": "^1.24.0",
@@ -19,12 +21,16 @@
     "nodemailer": "^9.0.3",
     "radix-ui": "^1.6.2",
     "react": "19.2.4",
+    "react-day-picker": "^10.0.1",
     "react-dom": "19.2.4",
+    "react-hook-form": "^7.81.0",
     "react-icons": "^5.7.0",
     "react-resizable-panels": "^4.12.1",
+    "recharts": "^3.9.2",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.6.0",
-    "three": "^0.185.1"
+    "three": "^0.185.1",
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@react-three/drei": "^10.7.7",
