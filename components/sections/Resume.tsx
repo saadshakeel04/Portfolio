@@ -149,7 +149,7 @@ export function Resume() {
             <div className="glass-adaptive rounded-2xl p-6 space-y-5">
               <h3 className="font-bold text-xl">Get My Resume</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Download my resume for a complete overview of my skills, experience, education, and projects.
+                Download my resume for a complete overview of my skills, experience, education and projects.
               </p>
 
               <motion.a

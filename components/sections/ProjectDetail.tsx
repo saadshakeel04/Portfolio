@@ -1,13 +1,15 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ExternalLink, Play, CheckCircle2, Zap, ChevronLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Zap, ChevronLeft } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
 import type { Project } from '@/lib/types';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { ScreenshotLightbox } from '@/components/ui/Screenshot';
 
 interface Props {
   project: Project;
@@ -16,6 +18,14 @@ interface Props {
 }
 
 export function ProjectDetail({ project, prevProject, nextProject }: Props) {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
     <>
       <Navbar />
@@ -84,12 +94,6 @@ export function ProjectDetail({ project, prevProject, nextProject }: Props) {
                   <FaGithub className="w-4 h-4" /> View Code
                 </a>
               )}
-              {project.demoVideo && (
-                <a href={project.demoVideo} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm border border-border hover:border-violet-400/40 hover:bg-violet-400/5 text-violet-400 transition-all">
-                  <Play className="w-4 h-4" /> Watch Demo
-                </a>
-              )}
             </div>
 
             <div className="flex flex-wrap gap-1.5">
@@ -106,6 +110,53 @@ export function ProjectDetail({ project, prevProject, nextProject }: Props) {
             <h2 className="text-2xl font-bold mb-4">Project Overview</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">{project.overview}</p>
           </motion.div>
+
+          {/* Video Demo Section (Primary Media Showcase) */}
+          {project.demoVideo && (
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h2 className="text-2xl font-bold mb-6">Application Walkthrough</h2>
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-border/50 bg-slate-950 shadow-2xl shadow-cyan-500/5">
+                <video
+                  src={project.demoVideo}
+                  controls
+                  preload="metadata"
+                  className="w-full h-full object-contain"
+                  poster={project.thumbnail} // Uses the main thumbnail as a placeholder loading image
+                />
+              </div>
+            </motion.div>
+          )}
+
+          {/* Screenshots strip — always shown when screenshots exist, opens lightbox gallery */}
+          {project.screenshots.length > 0 && (
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h2 className="text-2xl font-bold mb-6">Gallery</h2>
+              <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-border/50 scrollbar-track-transparent">
+                {project.screenshots.map((src, i) => (
+                  <motion.button
+                    key={i}
+                    type="button"
+                    initial={{ opacity: 0, scale: 0.97 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.07 }}
+                    onClick={() => openLightbox(i)}
+                    className="group relative flex-shrink-0 w-64 sm:w-72 aspect-video rounded-xl overflow-hidden border border-border/50 hover:border-cyan-400/40 transition-all duration-300 snap-start"
+                    aria-label={`Open screenshot ${i + 1}`}
+                  >
+                    <Image
+                      src={src}
+                      alt={`${project.title} screenshot ${i + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="288px"
+                    />
+                    <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-300" />
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+          )}
 
           {/* Features + Challenges */}
           <div className="grid md:grid-cols-2 gap-10">
@@ -150,33 +201,6 @@ export function ProjectDetail({ project, prevProject, nextProject }: Props) {
             </motion.div>
           </div>
 
-          {/* Screenshots Gallery */}
-          {project.screenshots.length > 0 && (
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-2xl font-bold mb-6">Gallery</h2>
-              <div className={`grid gap-4 ${project.screenshots.length > 1 ? 'md:grid-cols-2' : ''}`}>
-                {project.screenshots.map((src, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="relative aspect-video rounded-2xl overflow-hidden group"
-                  >
-                    <Image
-                      src={src}
-                      alt={`${project.title} screenshot ${i + 1}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
           {/* Prev / Next Navigation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -211,6 +235,14 @@ export function ProjectDetail({ project, prevProject, nextProject }: Props) {
         </div>
       </main>
       <Footer />
+
+      <ScreenshotLightbox
+        images={project.screenshots}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        title={project.title}
+      />
     </>
   );
 }

@@ -4,7 +4,7 @@ import { projects } from '@/lib/data';
 import { ProjectDetail } from '@/components/sections/ProjectDetail';
 
 interface Props {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export async function generateStaticParams() {
@@ -12,7 +12,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = projects.find((p) => p.id === params.id);
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
   if (!project) return {};
   return {
     title: `${project.title} — Saad Shakeel`,
@@ -20,11 +21,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = projects.find((p) => p.id === params.id);
+export default async function ProjectPage({ params }: Props) {
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
   if (!project) notFound();
 
-  const currentIndex = projects.findIndex((p) => p.id === params.id);
+  const currentIndex = projects.findIndex((p) => p.id === id);
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 

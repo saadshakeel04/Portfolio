@@ -29,7 +29,7 @@ export function Footer() {
               className="text-2xl font-bold tracking-tight cursor-pointer w-fit"
               onClick={scrollToTop}
             >
-              <span className="text-gradient-cyan">Alex Chen</span>
+              <span className="text-gradient-cyan">Saad Shakeel</span>
             </motion.div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Full Stack Developer crafting elegant digital experiences at the intersection of design and engineering.

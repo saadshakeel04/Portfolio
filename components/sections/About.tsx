@@ -155,7 +155,7 @@ export function About() {
                 <span className="text-sm font-semibold text-muted-foreground tracking-widest uppercase">What I&apos;m After</span>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                I&apos;m looking to join a team that cares deeply about craft — where design and engineering are treated as one discipline. I want to work on products that millions of people use daily and that solve genuinely hard problems.
+                I&apos;m looking to join a team that cares deeply about craft where design and engineering are treated as one discipline. I want to work on products that millions of people use daily and that solve genuinely hard problems.
               </p>
             </motion.div>
 

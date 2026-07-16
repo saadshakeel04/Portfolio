@@ -9,19 +9,19 @@ export const personalInfo = {
   github: 'https://github.com/saadshakeel04',
   linkedin: 'https://www.linkedin.com/in/saad-shakeel-419063259/',
   instagram: 'https://www.instagram.com/saad.dev04/', 
-  resume: '/resume.pdf',
-  photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800', // Feel free to update with your personal image path
+  resume: '/Saad_Shakeel_Resume.pdf',
+  photo: '/myPic.png', // Feel free to update with your personal image path
   bio: "I'm a Full Stack Software Engineer with hands-on experience building responsive and scalable web applications. I specialize in React.js, Next.js, and Node.js, with a passion for optimizing performance and creating seamless user experiences.",
   about: [
     "My journey into software engineering focuses on writing clean, maintainable, and efficient code. I enjoy building reusable components, integrating robust APIs, and optimizing system reliability across the entire development lifecycle.",
     "Today, I work actively across Frontend and Full Stack ecosystems—collaborating in Agile workflows, translating product requirements into high-performance web applications, and resolving complex architectural challenges.",
     "When I'm not writing code, I explore AI architectures, set up automation pipelines, practice software requirements mapping, or keep up with mobile ecosystem innovations."
   ],
-  interests: ['Frontend Architecture', 'AI & Machine Learning Integration', 'DevOps & CI/CD', 'Mobile App Development', 'System Optimization'],
+  interests: ['AI & Machine Learning', 'DevOps & CI/CD', 'Full Stack Development', 'Mobile App Development', 'Performance Optimization'],
   stats: [
-    { label: 'Projects Built', value: 6 },
-    { label: 'Months Experience', value: 14 },
-    { label: 'API Integrations', value: 12 },
+    { label: 'Projects Built', value: 20 },
+    { label: 'Months Experience', value: 18 },
+    { label: 'Technologies', value: 25 },
     { label: 'Core Technical Skills', value: 15 },
   ],
 };
@@ -125,7 +125,7 @@ export const experiences: Experience[] = [
     duration: 'Nov 2025 – Present',
     startDate: '2025-11',
     endDate: 'Present',
-    location: 'Gujrat, Pakistan (Hybrid)',
+    location: 'Gujrat, Pakistan',
     type: 'Full-time',
     current: true,
     description: [
@@ -222,8 +222,9 @@ export const projects: Project[] = [
     thumbnail: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800',
     category: 'Mobile / AI',
     featured: true,
-    techStack: ['React Native', 'Expo Router', 'Python', 'Express.js', 'Firebase Auth', 'GitHub Actions', 'FFmpeg'],
+    techStack: ['React Native', 'Open CV', 'Expo Router', 'Python', 'Express.js', 'PostgreSQL', 'GitHub Actions', 'FFmpeg'],
     overview: 'SketchWise acts as a virtual sketch coach. It converts user images into outline drawings using Generative Adversarial Networks (GANs) and plays step-by-step tutorial animations created asynchronously on a backend engine.',
+    demoVideo: '/demo.mp4',
     features: [
       'Converts images into pencil sketches and vector line art using custom GAN networks',
       'Asynchronous background video encoding using optimized custom FFmpeg presets',
@@ -232,8 +233,8 @@ export const projects: Project[] = [
       'Flexible layouts using cross-platform responsive interface architectures',
     ],
     challenges: [
-      'Optimizing automated video pipelines required building an asynchronous processing layer in Python to handle high-fidelity presets without freezing backend operations.',
-      'Managing fast token transactions securely was achieved by creating low-latency middleware hooks linked directly to authentication tokens.',
+       'Designed an asynchronous image and video processing pipeline to generate sketch tutorials without blocking user requests or affecting application performance.',
+       'Implemented a secure token-based credit system while maintaining synchronization between the mobile application and backend services.',
     ],
     screenshots: [
       'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200',
@@ -245,10 +246,13 @@ export const projects: Project[] = [
     shortDescription: 'Responsive monitoring application for application metrics, candidate flows, and job data visualization.',
     description: 'A comprehensive, single-page application employment dashboard engineered to provide companies and candidates real-time monitoring of application stages, job board statuses, and workflow metrics.',
     thumbnail: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+    github: 'https://github.com/saadshakeel04/InternHub-Dashboard',
+    liveDemo: 'https://intern-hub-dashboard.vercel.app/',
+    demoVideo: '/demo.mp4',
     category: 'SaaS / Analytics',
     featured: true,
-    techStack: ['React.js', 'Tailwind CSS', 'Recharts', 'JavaScript', 'Vercel'],
-    overview: 'InternHub automates job application tracking. It eliminates scattered spreadsheets by gathering candidate processing statuses, metrics, and analytical insights into a high-performance administrative panel.',
+    techStack: ['React.js', 'Tailwind CSS', 'Recharts', 'JavaScript', 'Local Storage', 'Vite', 'Vercel'],
+    overview: 'InternHub is a responsive recruitment dashboard that helps organizations manage job postings, candidate applications, and hiring analytics through interactive charts, real-time statistics and streamlined recruitment workflows.',
     features: [
       'Interactive visual graphs built using Recharts for pipeline overview analytics',
       'Fluid tracking system mapping applicant paths from screening stages through offers',
@@ -256,7 +260,8 @@ export const projects: Project[] = [
       'Responsive component layout adapting seamlessly across mobile, tablet, and desktop views',
     ],
     challenges: [
-      'Ensuring performance efficiency when updating numerous data models simultaneously was solved by implementing modular component structures and declarative state hooks.',
+      'Managed complex application state across multiple dashboard modules while minimizing unnecessary component re-renders.',
+      'Built reusable and responsive chart components that accurately visualized recruitment metrics across different screen sizes.',
     ],
     screenshots: [
       'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1200',
@@ -269,9 +274,10 @@ export const projects: Project[] = [
     description: 'A deep full-stack travel scheduling application engineered around strict MVC design principles to manage booking details, payment flows, customer queries, and multi-user accounts safely.',
     thumbnail: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
     category: 'Web Application / Enterprise',
+    demoVideo: '/demo.mp4',
     featured: true,
-    techStack: ['C#', 'ASP.NET Core', 'MVC Architecture', 'SQL Server', 'Bootstrap'],
-    overview: 'TripVerse offers automated travel planning workflows. It allows users to browse global itineraries, finalize trip slots, manage reservations, and access persistent records.',
+    techStack: ['C#', 'ASP.NET Web', 'MVC Architecture', 'MySQL', 'XAML'],
+    overview: 'TripVerse is a full-stack travel planning and booking platform developed using ASP.NET MVC, enabling users to browse destinations, manage reservations and securely maintain booking records through a scalable architecture.',
     features: [
       'Strict Model-View-Controller framework pattern for high data isolation and stability',
       'Secure transaction mechanisms and relational database queries built on SQL Server',
@@ -279,7 +285,8 @@ export const projects: Project[] = [
       'Intuitive user profile portals mapping booking history and ticket logs',
     ],
     challenges: [
-      'Structuring scalable relationship bounds between complex transactional models required optimized indexing strategies across key SQL database tables.',
+    'Designed a normalized database structure capable of efficiently handling bookings, users, destinations and transaction records.',
+    'Implemented secure booking workflows while ensuring data consistency during concurrent reservation requests.',
     ],
     screenshots: [
       'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200',
@@ -291,14 +298,23 @@ export const projects: Project[] = [
     shortDescription: 'Clean, full-featured personal notes environment designed with optimized CRUD actions.',
     description: 'A modern, responsive productivity tool that gives users a distraction-free digital workplace to document thoughts, structure to-do groups, and handle continuous data management with ease.',
     thumbnail: 'https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=800',
+    github:"https://github.com/saadshakeel04/Notes-Management-System",
+    liveDemo:"https://notes-management-system-three.vercel.app/",
+    demoVideo: '/demo.mp4',
     category: 'Productivity',
+    overview:
+'Notely is a modern notes management application built with React.js and Supabase that enables users to securely create, organize, edit, search, and manage personal notes through a clean and responsive interface.',
     featured: false,
-    techStack: ['React.js', 'Tailwind CSS', 'JavaScript (ES6)', 'Local Database Systems'],
+    techStack: ['React.js', 'Tailwind CSS', 'Supabase JS', 'Framer Motion', 'Vite', 'Vercel'],
     features: [
       'Instant create, read, update, and delete actions linked with localized states',
       'Advanced textual filtering to navigate categories and search labels in real time',
       'Minimalist, pixel-perfect user interface tailored for focus and ease of use',
     ],
+    challenges: [
+  'Kept frontend state synchronized with Supabase during CRUD operations while providing instant UI updates.',
+  'Implemented efficient note searching and category filtering without degrading performance as user data increased.',
+],
     screenshots: [
       'https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=1200',
     ],
@@ -309,9 +325,12 @@ export const projects: Project[] = [
     shortDescription: 'E-commerce logistics platform optimizing product packaging and shipment workflows.',
     description: 'A dedicated, highly accessible e-commerce operational tool custom-tailored to accelerate logistics center processing, package sorting, shipment verification, and delivery logging.',
     thumbnail: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+    github:"https://github.com/WardahFayyaz/PrepWebsite",
+    liveDemo:"https://prep-website-xi.vercel.app/",
+    demoVideo: '/demo.mp4',
     category: 'E-commerce / Logistics',
     featured: false,
-    techStack: ['React.js', 'Tailwind CSS', 'Supabase', 'Node.js'],
+    techStack: ['React.js', 'Tailwind CSS', 'MongoDB', 'Node.js', 'Express.js', 'Vercel'],
     features: [
       'Unified tracking framework to manage incoming inventories and package queues',
       'Automated updates linked directly with cloud database tables using Supabase connections',
@@ -321,4 +340,42 @@ export const projects: Project[] = [
       'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200',
     ],
   },
+
+  {
+  id: 'calchub',
+  title: 'CalcHub',
+  shortDescription:
+    'A multi-functional calculator platform offering a collection of everyday, financial, and mathematical calculators through a fast and responsive interface.',
+  description:
+    'CalcHub is a full-stack web application built with React.js and Node.js that provides users with multiple calculators in a single platform. Designed with a modular architecture, it delivers accurate calculations, responsive user interfaces, and a seamless user experience across desktop and mobile devices.',
+  thumbnail:
+    'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800',
+  liveDemo: 'https://front-web-weld.vercel.app/', 
+  demoVideo: '/demo.mp4',
+  category: 'Web Application / Productivity',
+  featured: false,
+  overview:
+    'CalcHub is a multi-functional calculator platform developed using React.js and Node.js that brings together a variety of calculators in one place. Its modular architecture makes it easy to extend with new calculators while maintaining a clean, responsive, and user-friendly interface.',
+  techStack: [
+    'React.js',
+    'Node.js',
+    'Express.js',
+    'JavaScript',
+    'CSS3',
+    'HTML5',
+  ],
+  features: [
+    'Multiple calculators integrated into a single platform with a modular architecture',
+    'Accurate real-time calculations with input validation and error handling',
+    'Responsive user interface optimized for desktop, tablet, and mobile devices',
+    'Scalable structure allowing easy integration of additional calculator modules',
+  ],
+  challenges: [
+    'Designed a reusable architecture that allowed new calculators to be integrated without impacting existing functionality.',
+    'Handled mathematical edge cases, input validation, and calculation accuracy consistently across different calculator modules.',
+  ],
+  screenshots: [
+    'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  ],
+},
 ];
