@@ -136,8 +136,7 @@ export function About() {
                   <p className="text-sm text-cyan-400">{edu.institution}</p>
                   <div className="flex items-center gap-3 mt-1">
                     <span className="text-xs text-muted-foreground">{edu.duration}</span>
-                    {edu.gpa && <span className="text-xs text-muted-foreground">GPA: {edu.gpa}</span>}
-                    {edu.honors && <span className="text-xs text-green-400">{edu.honors}</span>}
+                    {edu.gpa && <span className="text-xs text-muted-foreground">CGPA: {edu.gpa}</span>}
                   </div>
                 </div>
               ))}

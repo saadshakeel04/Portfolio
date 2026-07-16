@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { Moon, Sun, Menu, X, Download } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaTwitter, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 import { navItems, personalInfo } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
@@ -189,8 +189,8 @@ export function Navbar() {
               <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 text-foreground/50 hover:text-foreground transition-colors">
                 <FaLinkedin className="w-4 h-4" />
               </a>
-              <a href={personalInfo.twitter} target="_blank" rel="noopener noreferrer" className="p-2 text-foreground/50 hover:text-foreground transition-colors">
-                <FaTwitter className="w-4 h-4" />
+              <a href={personalInfo.instagram} target="_blank" rel="noopener noreferrer" className="p-2 text-foreground/50 hover:text-foreground transition-colors">
+                <FaInstagram className="w-4 h-4" />
               </a>
               <a
                 href={personalInfo.resume}

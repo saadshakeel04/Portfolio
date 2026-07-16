@@ -8,7 +8,7 @@ export const personalInfo = {
   location: 'Islamabad, Pakistan',
   github: 'https://github.com/saadshakeel04',
   linkedin: 'https://www.linkedin.com/in/saad-shakeel-419063259/',
-  twitter: '', // Add your Twitter profile handle here if desired
+  instagram: 'https://www.instagram.com/saad.dev04/', 
   resume: '/resume.pdf',
   photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800', // Feel free to update with your personal image path
   bio: "I'm a Full Stack Software Engineer with hands-on experience building responsive and scalable web applications. I specialize in React.js, Next.js, and Node.js, with a passion for optimizing performance and creating seamless user experiences.",
@@ -209,8 +209,7 @@ export const education: Education[] = [
     degree: "Bachelor's of Science",
     field: 'Computer Science',
     duration: '2022 – 2026',
-    gpa: '3.3 / 4.0',
-    honors: 'Final Year Student',
+    gpa: '3.4 / 4.0',
   },
 ];
 

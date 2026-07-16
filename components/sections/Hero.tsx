@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { ArrowDown, Mail, Sparkles, Code2, Zap } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaTwitter, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaXTwitter, FaInstagram } from 'react-icons/fa6';
 import Image from 'next/image';
 import { personalInfo } from '@/lib/data';
 
@@ -54,12 +54,12 @@ function TypewriterTitle() {
 const socialLinks = [
   { icon: FaGithub, href: personalInfo.github, label: 'GitHub' },
   { icon: FaLinkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
-  { icon: FaXTwitter, href: personalInfo.twitter, label: 'X' },
+  { icon: FaInstagram, href: personalInfo.instagram, label: 'instagram' },
   { icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email' },
 ];
 
 const badges = [
-  { icon: Code2, text: '4+ Years Experience' },
+  { icon: Code2, text: '1.5+ Years Experience' },
   { icon: Zap, text: '20+ Projects Built' },
   { icon: Sparkles, text: 'Open to Work' },
 ];
