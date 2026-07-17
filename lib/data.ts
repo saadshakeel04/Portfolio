@@ -10,12 +10,12 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/saad-shakeel-419063259/',
   instagram: 'https://www.instagram.com/saad.dev04/', 
   resume: '/Saad_Shakeel_Resume.pdf',
-  photo: '/myPic.png', // Feel free to update with your personal image path
+  photo: '/me.png', // Feel free to update with your personal image path
   bio: "I'm a Full Stack Software Engineer with hands-on experience building responsive and scalable web applications. I specialize in React.js, Next.js, and Node.js, with a passion for optimizing performance and creating seamless user experiences.",
   about: [
     "My journey into software engineering focuses on writing clean, maintainable, and efficient code. I enjoy building reusable components, integrating robust APIs, and optimizing system reliability across the entire development lifecycle.",
-    "Today, I work actively across Frontend and Full Stack ecosystems—collaborating in Agile workflows, translating product requirements into high-performance web applications, and resolving complex architectural challenges.",
-    "When I'm not writing code, I explore AI architectures, set up automation pipelines, practice software requirements mapping, or keep up with mobile ecosystem innovations."
+    "Today, I work actively across Frontend and Full Stack ecosystems collaborating in Agile workflows, translating product requirements into high-performance web applications and resolving complex architectural challenges.",
+    "Beyond my day-to-day development work, I'm passionate about exploring system design, software architecture, AI-powered applications and modern engineering practices. I'm constantly learning new technologies and refining my skills to build products that create meaningful impact and deliver long-term value."
   ],
   interests: ['AI & Machine Learning', 'DevOps & CI/CD', 'Full Stack Development', 'Mobile App Development', 'Performance Optimization'],
   stats: [

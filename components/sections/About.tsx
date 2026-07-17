@@ -174,8 +174,8 @@ export function About() {
                 {personalInfo.interests.map((interest) => (
                   <motion.span
                     key={interest}
-                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-foreground/5 text-muted-foreground border border-border/50 hover:border-cyan-400/30 hover:text-cyan-400 hover:bg-cyan-400/5 transition-all duration-200 cursor-default"
-                    whileHover={{ scale: 1.05, y: -1 }}
+                   className="px-3 py-1.5 rounded-lg text-xs font-medium bg-foreground/5 text-muted-foreground border border-border/50 hover:border-cyan-400/30 hover:text-cyan-400 hover:bg-cyan-400/5 transition-all duration-75 cursor-default"
+  whileHover={{ scale: 1.05, y: -1 }}
                   >
                     {interest}
                   </motion.span>
