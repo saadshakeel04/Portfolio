@@ -45,7 +45,7 @@ export function About() {
             >
               <div className="relative overflow-hidden rounded-3xl aspect-[4/3]">
                 <Image
-                  src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src="/about.png"
                   alt="Working at desk"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"

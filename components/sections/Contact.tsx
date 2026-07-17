@@ -102,7 +102,7 @@ export function Contact() {
             <div className="glass-adaptive rounded-2xl p-6 space-y-5">
               <h3 className="font-bold text-xl">Get in Touch</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Whether you have a question, a project idea, hire me or just want to connect,  my inbox is always open. I make sure to reply in 24 hours.
+                Whether you have a question, a project idea, want to hire me or just want to connect,  my inbox is always open. I make sure to reply in 24 hours.
               </p>
 
               <div className="space-y-3 pt-2">

@@ -73,12 +73,12 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">Get in Touch</h4>
             <div className="space-y-2">
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="block text-sm text-muted-foreground hover:text-cyan-400 transition-colors"
-              >
-                {personalInfo.email}
-              </a>
+             <a
+  href={`mailto:${personalInfo.email}`}
+  className="inline-block text-sm text-muted-foreground hover:text-cyan-400 transition-colors"
+>
+  {personalInfo.email}
+</a>
               <p className="text-sm text-muted-foreground">{personalInfo.location}</p>
               <div className="flex items-center gap-1.5 mt-3">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />

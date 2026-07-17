@@ -8,10 +8,10 @@ import { FaGithub, FaLinkedin, FaXTwitter, FaInstagram } from 'react-icons/fa6';
 import Image from 'next/image';
 import { personalInfo } from '@/lib/data';
 
-const HeroScene = dynamic(() => import('@/components/three/HeroScene').then((m) => ({ default: m.HeroScene })), {
-  ssr: false,
-  loading: () => <div className="w-full h-full" />,
-});
+// const HeroScene = dynamic(() => import('@/components/three/HeroScene').then((m) => ({ default: m.HeroScene })), {
+//   ssr: false,
+//   loading: () => <div className="w-full h-full" />,
+// });
 
 const titles = [
   'Full Stack Developer',
@@ -80,9 +80,9 @@ export function Hero() {
         This places the 3D scene behind everything in the hero, 
         giving it plenty of room to float and rotate past the text grid.
       */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+      {/* <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <HeroScene />
-      </div>
+      </div> */}
 
       {/* Background radial gradient */}
       <div className="absolute inset-0 pointer-events-none z-0">

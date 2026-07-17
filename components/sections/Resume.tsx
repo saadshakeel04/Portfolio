@@ -16,7 +16,7 @@ const highlights = [
   {
     icon: GraduationCap,
     label: 'Education',
-    value: 'BS Computer Science',
+    value: 'BSCS',
     detail: 'University of Gujrat, 3.4 CGPA',
     color: '#8b5cf6',
   },

@@ -13,11 +13,11 @@ export const personalInfo = {
   photo: '/me.png', // Feel free to update with your personal image path
   bio: "I'm a Full Stack Software Engineer with hands-on experience building responsive and scalable web applications. I specialize in React.js, Next.js, and Node.js, with a passion for optimizing performance and creating seamless user experiences.",
   about: [
-    "My journey into software engineering focuses on writing clean, maintainable, and efficient code. I enjoy building reusable components, integrating robust APIs, and optimizing system reliability across the entire development lifecycle.",
-    "Today, I work actively across Frontend and Full Stack ecosystems collaborating in Agile workflows, translating product requirements into high-performance web applications and resolving complex architectural challenges.",
+ "I'm Saad Shakeel, a Full Stack Software Engineer with over a year of professional experience building responsive and scalable web applications. I specialize in React.js, Next.js, TypeScript, Node.js, PostgreSQL, GraphQL and modern web technologies, with a strong focus on writing clean, maintainable and efficient code.",
+  "I hold a Bachelor's degree in Computer Science from the University of Gujrat and have worked on enterprise applications, full-stack platforms and AI-powered projects. I enjoy building reusable components, integrating APIs and collaborating with cross-functional teams in Agile environments.",
     "Beyond my day-to-day development work, I'm passionate about exploring system design, software architecture, AI-powered applications and modern engineering practices. I'm constantly learning new technologies and refining my skills to build products that create meaningful impact and deliver long-term value."
   ],
-  interests: ['AI & Machine Learning', 'DevOps & CI/CD', 'Full Stack Development', 'Mobile App Development', 'Performance Optimization'],
+  interests: ['AI & Machine Learning', 'DevOps & CI/CD', 'Full Stack Development', 'Mobile App Development'],
   stats: [
     { label: 'Projects Built', value: 20 },
     { label: 'Months Experience', value: 18 },

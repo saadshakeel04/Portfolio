@@ -7,6 +7,7 @@ import { Moon, Sun, Menu, X, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 import { navItems, personalInfo } from '@/lib/data';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,7 +62,14 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-gradient-cyan">Saad</span>
+           <Image
+                             src="/logo.svg"
+                             alt="Saad Shakeel logo"
+                             width={80}
+                             height={80}
+                             priority
+                             className="relative object-contain drop-shadow-[0_0_25px_rgba(34,211,238,0.35)]"
+                           />
           </motion.button>
 
           {/* Desktop Nav */}
