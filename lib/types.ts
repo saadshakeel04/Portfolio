@@ -5,15 +5,14 @@ export interface Project {
   description: string;
   thumbnail: string;
   category: string;
-  featured: boolean;
   techStack: string[];
   liveDemo?: string;
   github?: string;
   demoVideo?: string;
   features: string[];
-  screenshots: string[];
   challenges?: string[]; 
   overview?: string;
+  gifs?: string[];
 }
 
 export interface Experience {

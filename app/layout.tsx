@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { SplashScreen } from '@/components/layout/SplashScreen';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -9,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL(''), // Replace with portfolio URL
+  // metadataBase: new URL(''), 
 
   title: {
     default: 'Saad Shakeel | Full Stack Developer',
@@ -68,27 +69,12 @@ export const metadata: Metadata = {
       'Explore the portfolio of Saad Shakeel, a Full Stack Developer building scalable and modern web applications with React.js, Next.js, TypeScript, and Node.js.',
     images: [
       {
-        url: '', // Replace with Open Graph image
+        url: '/OG-Img.png', 
         width: 1200,
         height: 630,
         alt: 'Saad Shakeel Portfolio',
       },
     ],
-  },
-
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Saad Shakeel | Full Stack Developer',
-    description:
-      'Full Stack Developer specializing in React.js, Next.js, TypeScript, and Node.js.',
-    creator: '', 
-    images: ['/og-image.png'],
-  },
-
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
   },
 
   alternates: {
@@ -104,6 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <SplashScreen>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -111,7 +98,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-        </ThemeProvider>
+        </ThemeProvider></SplashScreen>
       </body>
     </html>
   );

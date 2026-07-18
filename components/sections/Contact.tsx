@@ -17,8 +17,8 @@ interface FormData {
 const contactDetails = [
   { icon: Mail, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}` },
   { icon: MapPin, label: 'Location', value: personalInfo.location, href: null },
-  { icon: FaGithub, label: 'GitHub', value: 'github.com/alexchen', href: personalInfo.github },
-  { icon: FaLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/alexchen', href: personalInfo.linkedin },
+  { icon: FaGithub, label: 'GitHub', value: 'github.com/saadshakeel04', href: personalInfo.github },
+  { icon: FaLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/saad-shakeel-419063259', href: personalInfo.linkedin },
 ];
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
@@ -87,7 +87,7 @@ export function Contact() {
           label="Contact"
           title="Let's Build"
           titleHighlight="Something Together"
-          description="Have a project in mind or want to chat? I'd love to hear from you."
+          description="Have a project in mind or want to hire me? I'm just a message away"
           align="center"
         />
 
@@ -102,7 +102,7 @@ export function Contact() {
             <div className="glass-adaptive rounded-2xl p-6 space-y-5">
               <h3 className="font-bold text-xl">Get in Touch</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Whether you have a question, a project idea, or just want to connect — my inbox is always open. I&apos;ll do my best to get back to you within 24 hours.
+                Whether you have a question, a project idea, want to hire me or just want to connect,  my inbox is always open. I make sure to reply in 24 hours.
               </p>
 
               <div className="space-y-3 pt-2">
@@ -139,7 +139,7 @@ export function Contact() {
                 <span className="w-3 h-3 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
                 <div>
                   <p className="text-sm font-semibold">Available for Opportunities</p>
-                  <p className="text-xs text-muted-foreground">Full-time, Contract & Consulting</p>
+                  <p className="text-xs text-muted-foreground">Full-time, Part-time, Contract & Freelance</p>
                 </div>
               </div>
             </motion.div>

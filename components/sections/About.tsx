@@ -45,7 +45,7 @@ export function About() {
             >
               <div className="relative overflow-hidden rounded-3xl aspect-[4/3]">
                 <Image
-                  src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src="/about.webp"
                   alt="Working at desk"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -136,8 +136,7 @@ export function About() {
                   <p className="text-sm text-cyan-400">{edu.institution}</p>
                   <div className="flex items-center gap-3 mt-1">
                     <span className="text-xs text-muted-foreground">{edu.duration}</span>
-                    {edu.gpa && <span className="text-xs text-muted-foreground">GPA: {edu.gpa}</span>}
-                    {edu.honors && <span className="text-xs text-green-400">{edu.honors}</span>}
+                    {edu.gpa && <span className="text-xs text-muted-foreground">CGPA: {edu.gpa}</span>}
                   </div>
                 </div>
               ))}
@@ -156,7 +155,7 @@ export function About() {
                 <span className="text-sm font-semibold text-muted-foreground tracking-widest uppercase">What I&apos;m After</span>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                I&apos;m looking to join a team that cares deeply about craft — where design and engineering are treated as one discipline. I want to work on products that millions of people use daily and that solve genuinely hard problems.
+                I&apos;m looking to join a team that cares deeply about craft where design and engineering are treated as one discipline. I want to work on products that millions of people use daily and that solve genuinely hard problems.
               </p>
             </motion.div>
 
@@ -175,8 +174,8 @@ export function About() {
                 {personalInfo.interests.map((interest) => (
                   <motion.span
                     key={interest}
-                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-foreground/5 text-muted-foreground border border-border/50 hover:border-cyan-400/30 hover:text-cyan-400 hover:bg-cyan-400/5 transition-all duration-200 cursor-default"
-                    whileHover={{ scale: 1.05, y: -1 }}
+                   className="px-3 py-1.5 rounded-lg text-xs font-medium bg-foreground/5 text-muted-foreground border border-border/50 hover:border-cyan-400/30 hover:text-cyan-400 hover:bg-cyan-400/5 transition-all duration-75 cursor-default"
+  whileHover={{ scale: 1.05, y: -1 }}
                   >
                     {interest}
                   </motion.span>

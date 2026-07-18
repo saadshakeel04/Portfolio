@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Mail, ArrowUp, Heart } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaTwitter, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 import { navItems, personalInfo } from '@/lib/data';
 
 export function Footer() {
@@ -14,7 +14,7 @@ export function Footer() {
   const socials = [
     { icon: FaGithub, href: personalInfo.github, label: 'GitHub' },
     { icon: FaLinkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
-    { icon: FaXTwitter, href: personalInfo.twitter, label: 'X' },
+    { icon: FaInstagram, href: personalInfo.instagram, label: 'instagram' },
     { icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email' },
   ];
 
@@ -29,7 +29,7 @@ export function Footer() {
               className="text-2xl font-bold tracking-tight cursor-pointer w-fit"
               onClick={scrollToTop}
             >
-              <span className="text-gradient-cyan">Alex Chen</span>
+              <span className="text-gradient-cyan">Saad Shakeel</span>
             </motion.div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Full Stack Developer crafting elegant digital experiences at the intersection of design and engineering.
@@ -73,12 +73,12 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">Get in Touch</h4>
             <div className="space-y-2">
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="block text-sm text-muted-foreground hover:text-cyan-400 transition-colors"
-              >
-                {personalInfo.email}
-              </a>
+             <a
+  href={`mailto:${personalInfo.email}`}
+  className="inline-block text-sm text-muted-foreground hover:text-cyan-400 transition-colors"
+>
+  {personalInfo.email}
+</a>
               <p className="text-sm text-muted-foreground">{personalInfo.location}</p>
               <div className="flex items-center gap-1.5 mt-3">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -91,7 +91,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-border/50">
           <p className="text-sm text-muted-foreground flex items-center gap-1.5">
-            Built with <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" /> by Alex Chen &copy; {new Date().getFullYear()}
+            All rights reserved by Saad Shakeel &copy; {new Date().getFullYear()}
           </p>
 
           <motion.button
