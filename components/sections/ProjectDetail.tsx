@@ -47,11 +47,6 @@ export function ProjectDetail({ project, prevProject, nextProject }: Props) {
                   <span className="px-3 py-1 rounded-full text-xs font-semibold bg-background/60 backdrop-blur text-muted-foreground border border-border/50">
                     {project.category}
                   </span>
-                  {project.featured && (
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 backdrop-blur">
-                      Featured
-                    </span>
-                  )}
                 </div>
 
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-2">
