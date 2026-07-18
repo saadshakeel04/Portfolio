@@ -111,6 +111,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'Git / GitHub', level: 90 },
       { name: 'GitHub Actions (CI/CD)', level: 82 },
+      { name: 'Docker', level: 80 },
       { name: 'Jira / Agile', level: 88 },
       { name: 'Vercel / Deployment', level: 90 },
     ],
@@ -216,15 +217,15 @@ export const education: Education[] = [
 export const projects: Project[] = [
   {
     id: 'sketchwise',
-    title: 'SketchWise — Your Personal Art Tutor',
+    title: 'SketchWise | Your Personal Art Tutor',
     shortDescription: 'Cross-platform React Native app transforming images to line art using GANs with automated video pipelines.',
     description: 'A cutting-edge mobile application built with React Native and Expo Router that handles image vector processing. It includes automated CI/CD workflows, secure user token structures, and asynchronous background pipelines.',
-    thumbnail: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800',
-    category: 'Mobile / AI',
+    thumbnail: '/sketchwise.png',
+    category: 'Final Year Project',
     featured: true,
-    techStack: ['React Native', 'Open CV', 'Expo Router', 'Python', 'Express.js', 'PostgreSQL', 'GitHub Actions', 'FFmpeg'],
-    overview: 'SketchWise acts as a virtual sketch coach. It converts user images into outline drawings using Generative Adversarial Networks (GANs) and plays step-by-step tutorial animations created asynchronously on a backend engine.',
-    demoVideo: '/demo.mp4',
+    techStack: ['React Native', 'Open CV', 'Expo Router', 'Python', 'Express.js', 'PostgreSQL', 'Redis', 'FFmpeg'],
+    overview: 'SketchWise is a mobile application built with React Native that transforms ordinary images into realistic pencil sketches and generates step-by-step sketching videos to help users learn drawing techniques. The application combines advanced image processing, asynchronous video generation, and secure backend services to deliver an interactive art learning experience. It features automated processing pipelines, a token-based premium usage system and a scalable architecture that supports high-quality media generation while maintaining a responsive user experience. The project is actively evolving, with upcoming features including multiple artistic sketch styles, an interactive tracing mode for guided practice, and additional learning tools to further enhance the digital art education experience.',
+    demoVideo: '/sketchwise.mp4',
     features: [
       'Converts images into pencil sketches and vector line art using custom GAN networks',
       'Asynchronous background video encoding using optimized custom FFmpeg presets',
@@ -236,23 +237,20 @@ export const projects: Project[] = [
        'Designed an asynchronous image and video processing pipeline to generate sketch tutorials without blocking user requests or affecting application performance.',
        'Implemented a secure token-based credit system while maintaining synchronization between the mobile application and backend services.',
     ],
-    screenshots: [
-      'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    ],
   },
   {
     id: 'internhub',
-    title: 'InternHub — Employment Dashboard',
+    title: 'InternHub | Employment Dashboard',
     shortDescription: 'Responsive monitoring application for application metrics, candidate flows, and job data visualization.',
     description: 'A comprehensive, single-page application employment dashboard engineered to provide companies and candidates real-time monitoring of application stages, job board statuses, and workflow metrics.',
-    thumbnail: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+    thumbnail: '/internhub.png',
     github: 'https://github.com/saadshakeel04/InternHub-Dashboard',
     liveDemo: 'https://intern-hub-dashboard.vercel.app/',
-    demoVideo: '/demo.mp4',
-    category: 'SaaS / Analytics',
+    category: 'Dashboard / Analytics',
     featured: true,
     techStack: ['React.js', 'Tailwind CSS', 'Recharts', 'JavaScript', 'Local Storage', 'Vite', 'Vercel'],
-    overview: 'InternHub is a responsive recruitment dashboard that helps organizations manage job postings, candidate applications, and hiring analytics through interactive charts, real-time statistics and streamlined recruitment workflows.',
+   overview:
+'InternHub is a modern recruitment and internship management dashboard that enables organizations to monitor hiring activities through interactive analytics and real-time statistics. Built with React.js and Recharts, it provides comprehensive insights into candidate applications, internship listings, approval rates and recruitment pipelines using dynamic charts and visual reports. The responsive interface streamlines recruitment workflows while helping administrators make informed hiring decisions through centralized data visualization.',
     features: [
       'Interactive visual graphs built using Recharts for pipeline overview analytics',
       'Fluid tracking system mapping applicant paths from screening stages through offers',
@@ -263,21 +261,20 @@ export const projects: Project[] = [
       'Managed complex application state across multiple dashboard modules while minimizing unnecessary component re-renders.',
       'Built reusable and responsive chart components that accurately visualized recruitment metrics across different screen sizes.',
     ],
-    screenshots: [
-      'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    ],
+    gifs: ['/v4.mp4','/v5.mp4','/v6.mp4']
   },
   {
     id: 'tripverse',
-    title: 'TripVerse — Travel Planning Platform',
+    title: 'TripVerse | Travel Planning Platform',
     shortDescription: 'Scalable booking architecture configured via Model-View-Controller patterns.',
     description: 'A deep full-stack travel scheduling application engineered around strict MVC design principles to manage booking details, payment flows, customer queries, and multi-user accounts safely.',
-    thumbnail: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
-    category: 'Web Application / Enterprise',
-    demoVideo: '/demo.mp4',
+    thumbnail: '/tripverse.png',
+    category: 'Enterprise Application',
+    demoVideo: '/tripverse.mp4',
     featured: true,
     techStack: ['C#', 'ASP.NET Web', 'MVC Architecture', 'MySQL', 'XAML'],
-    overview: 'TripVerse is a full-stack travel planning and booking platform developed using ASP.NET MVC, enabling users to browse destinations, manage reservations and securely maintain booking records through a scalable architecture.',
+    overview:
+'TripVerse is a full-stack travel planning and booking platform developed using ASP.NET MVC, designed to simplify destination discovery, reservation management and travel planning. The application follows the Model-View-Controller architecture to ensure clean separation of concerns, scalability and maintainable code. It provides secure booking workflows, user account management, administrative controls and efficient database operations for managing destinations, itineraries and travel records.',
     features: [
       'Strict Model-View-Controller framework pattern for high data isolation and stability',
       'Secure transaction mechanisms and relational database queries built on SQL Server',
@@ -288,22 +285,18 @@ export const projects: Project[] = [
     'Designed a normalized database structure capable of efficiently handling bookings, users, destinations and transaction records.',
     'Implemented secure booking workflows while ensuring data consistency during concurrent reservation requests.',
     ],
-    screenshots: [
-      'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    ],
   },
   {
     id: 'notely',
-    title: 'Notely — Notes Management System',
+    title: 'Notely | Notes Management System',
     shortDescription: 'Clean, full-featured personal notes environment designed with optimized CRUD actions.',
     description: 'A modern, responsive productivity tool that gives users a distraction-free digital workplace to document thoughts, structure to-do groups, and handle continuous data management with ease.',
-    thumbnail: 'https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=800',
+    thumbnail: '/notely.png',
     github:"https://github.com/saadshakeel04/Notes-Management-System",
     liveDemo:"https://notes-management-system-three.vercel.app/",
-    demoVideo: '/demo.mp4',
-    category: 'Productivity',
-    overview:
-'Notely is a modern notes management application built with React.js and Supabase that enables users to securely create, organize, edit, search, and manage personal notes through a clean and responsive interface.',
+    category: 'Productivity Application',
+ overview:
+'Notely is a modern productivity and notes management platform built with React.js, Vite, Tailwind CSS and Supabase that enables users to securely organize personal knowledge through an intuitive dashboard. The application supports authentication, note creation, editing, search, categorization, pinning, favorites, archiving, trash recovery and customizable themes to deliver a complete note-taking experience. With responsive design, real-time data synchronization and efficient state management. Notely provides a scalable and seamless workspace for managing ideas, tasks and personal information across devices.',
     featured: false,
     techStack: ['React.js', 'Tailwind CSS', 'Supabase JS', 'Framer Motion', 'Vite', 'Vercel'],
     features: [
@@ -315,67 +308,29 @@ export const projects: Project[] = [
   'Kept frontend state synchronized with Supabase during CRUD operations while providing instant UI updates.',
   'Implemented efficient note searching and category filtering without degrading performance as user data increased.',
 ],
-    screenshots: [
-      'https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=1200',
-    ],
+     gifs: ['/v7.mp4','/v8.mp4','/v9.mp4']
   },
   {
     id: 'canada-prepsolution',
-    title: 'Canada PrepSolution',
+    title: 'Canada Prep Solution',
     shortDescription: 'E-commerce logistics platform optimizing product packaging and shipment workflows.',
     description: 'A dedicated, highly accessible e-commerce operational tool custom-tailored to accelerate logistics center processing, package sorting, shipment verification, and delivery logging.',
-    thumbnail: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+    overview: 'Canada Prep Solution is a logistics and warehouse management platform developed with Node.js, Express.js, EJS and MongoDB to streamline package preparation and shipment workflows. The application helps warehouse staff efficiently manage inventory, organize product packaging, verify shipment records and monitor operational processes through an intuitive web interface. By optimizing order handling, package tracking and inventory management, the platform improves workflow efficiency while reducing processing errors in day-to-day logistics operations.',
+    thumbnail: '/prep.png',
     github:"https://github.com/WardahFayyaz/PrepWebsite",
     liveDemo:"https://prep-website-xi.vercel.app/",
-    demoVideo: '/demo.mp4',
-    category: 'E-commerce / Logistics',
+    category: 'E-commerce Platform',
     featured: false,
-    techStack: ['React.js', 'Tailwind CSS', 'MongoDB', 'Node.js', 'Express.js', 'Vercel'],
+    techStack: ['EJS', 'CSS', 'MongoDB', 'Node.js', 'Express.js', 'Vercel'],
     features: [
       'Unified tracking framework to manage incoming inventories and package queues',
       'Automated updates linked directly with cloud database tables using Supabase connections',
       'Simplified operational interfaces tailored to prevent logistical errors on warehouse floors',
     ],
-    screenshots: [
-      'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    ],
+    challenges: [
+  'Developed an efficient package preparation workflow that synchronized inventory, order status and shipment data while minimizing processing errors.',
+  'Built reusable server-rendered EJS components and optimized Express.js routes to improve maintainability, performance and overall user experience.',
+],
+     gifs: ['/v1.mp4','/v2.mp4','/v3.mp4']
   },
-
-  {
-  id: 'calchub',
-  title: 'CalcHub',
-  shortDescription:
-    'A multi-functional calculator platform offering a collection of everyday, financial, and mathematical calculators through a fast and responsive interface.',
-  description:
-    'CalcHub is a full-stack web application built with React.js and Node.js that provides users with multiple calculators in a single platform. Designed with a modular architecture, it delivers accurate calculations, responsive user interfaces, and a seamless user experience across desktop and mobile devices.',
-  thumbnail:
-    'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800',
-  liveDemo: 'https://front-web-weld.vercel.app/', 
-  demoVideo: '/demo.mp4',
-  category: 'Web Application / Productivity',
-  featured: false,
-  overview:
-    'CalcHub is a multi-functional calculator platform developed using React.js and Node.js that brings together a variety of calculators in one place. Its modular architecture makes it easy to extend with new calculators while maintaining a clean, responsive, and user-friendly interface.',
-  techStack: [
-    'React.js',
-    'Node.js',
-    'Express.js',
-    'JavaScript',
-    'CSS3',
-    'HTML5',
-  ],
-  features: [
-    'Multiple calculators integrated into a single platform with a modular architecture',
-    'Accurate real-time calculations with input validation and error handling',
-    'Responsive user interface optimized for desktop, tablet, and mobile devices',
-    'Scalable structure allowing easy integration of additional calculator modules',
-  ],
-  challenges: [
-    'Designed a reusable architecture that allowed new calculators to be integrated without impacting existing functionality.',
-    'Handled mathematical edge cases, input validation, and calculation accuracy consistently across different calculator modules.',
-  ],
-  screenshots: [
-    'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  ],
-},
 ];

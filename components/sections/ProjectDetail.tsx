@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +8,6 @@ import { FaGithub } from 'react-icons/fa6';
 import type { Project } from '@/lib/types';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { ScreenshotLightbox } from '@/components/ui/Screenshot';
 
 interface Props {
   project: Project;
@@ -18,13 +16,7 @@ interface Props {
 }
 
 export function ProjectDetail({ project, prevProject, nextProject }: Props) {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
-
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
+  const hasVideo = Boolean(project.demoVideo);
 
   return (
     <>
@@ -109,10 +101,19 @@ export function ProjectDetail({ project, prevProject, nextProject }: Props) {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-2xl font-bold mb-4">Project Overview</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">{project.overview}</p>
+
+            {/* Projects without a demo video get the fuller written description too,
+               since there's no video to carry that context. */}
+            {!hasVideo && project.description && project.description !== project.overview && (
+              <p className="text-muted-foreground leading-relaxed text-lg mt-4">
+                {project.description}
+              </p>
+            )}
           </motion.div>
 
-          {/* Video Demo Section (Primary Media Showcase) */}
-          {project.demoVideo && (
+          {/* Video Demo Section — only rendered when a demo video exists.
+             When present, it replaces the GIF gallery entirely. */}
+          {hasVideo && (
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-2xl font-bold mb-6">Application Walkthrough</h2>
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-border/50 bg-slate-950 shadow-2xl shadow-cyan-500/5">
@@ -127,32 +128,29 @@ export function ProjectDetail({ project, prevProject, nextProject }: Props) {
             </motion.div>
           )}
 
-          {/* Screenshots strip — always shown when screenshots exist, opens lightbox gallery */}
-          {project.screenshots.length > 0 && (
+          {!hasVideo && project.gifs && project.gifs.length > 0 && (
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-2xl font-bold mb-6">Gallery</h2>
-              <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-border/50 scrollbar-track-transparent">
-                {project.screenshots.map((src, i) => (
-                  <motion.button
-                    key={i}
-                    type="button"
+              <h2 className="text-2xl font-bold mb-6">Visual Snapshots</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {project.gifs.map((src, i) => (
+                  <motion.div
+                    key={src}
                     initial={{ opacity: 0, scale: 0.97 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.07 }}
-                    onClick={() => openLightbox(i)}
-                    className="group relative flex-shrink-0 w-64 sm:w-72 aspect-video rounded-xl overflow-hidden border border-border/50 hover:border-cyan-400/40 transition-all duration-300 snap-start"
-                    aria-label={`Open screenshot ${i + 1}`}
+                    transition={{ delay: i * 0.08 }}
+                    className="relative aspect-video rounded-xl overflow-hidden border border-border/50 bg-slate-950"
                   >
-                    <Image
+                    <video
                       src={src}
-                      alt={`${project.title} screenshot ${i + 1}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="288px"
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
                     />
-                    <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-300" />
-                  </motion.button>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -235,14 +233,6 @@ export function ProjectDetail({ project, prevProject, nextProject }: Props) {
         </div>
       </main>
       <Footer />
-
-      <ScreenshotLightbox
-        images={project.screenshots}
-        initialIndex={lightboxIndex}
-        isOpen={lightboxOpen}
-        onClose={() => setLightboxOpen(false)}
-        title={project.title}
-      />
     </>
   );
 }
