@@ -38,20 +38,13 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             )}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
 
           {/* Category + Featured badge */}
           <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-background/80 backdrop-blur text-muted-foreground border border-border/50">
+            <span className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 backdrop-blur">
               {project.category}
             </span>
-            {project.featured && (
-              <span className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 backdrop-blur">
-                <Star className="w-3 h-3 fill-cyan-400" />
-                Featured
-              </span>
-            )}
           </div>
 
           {/* Hover overlay with quick links */}

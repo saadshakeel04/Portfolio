@@ -5,7 +5,6 @@ export interface Project {
   description: string;
   thumbnail: string;
   category: string;
-  featured: boolean;
   techStack: string[];
   liveDemo?: string;
   github?: string;

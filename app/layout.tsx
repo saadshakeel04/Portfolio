@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL(''), // Replace with portfolio URL
+  // metadataBase: new URL(''), 
 
   title: {
     default: 'Saad Shakeel | Full Stack Developer',
@@ -69,27 +69,12 @@ export const metadata: Metadata = {
       'Explore the portfolio of Saad Shakeel, a Full Stack Developer building scalable and modern web applications with React.js, Next.js, TypeScript, and Node.js.',
     images: [
       {
-        url: '', // Replace with Open Graph image
+        url: '/OG-Img.png', 
         width: 1200,
         height: 630,
         alt: 'Saad Shakeel Portfolio',
       },
     ],
-  },
-
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Saad Shakeel | Full Stack Developer',
-    description:
-      'Full Stack Developer specializing in React.js, Next.js, TypeScript, and Node.js.',
-    creator: '', 
-    images: ['/og-image.webp'],
-  },
-
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.webp',
   },
 
   alternates: {
