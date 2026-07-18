@@ -83,13 +83,13 @@ export const metadata: Metadata = {
     description:
       'Full Stack Developer specializing in React.js, Next.js, TypeScript, and Node.js.',
     creator: '', 
-    images: ['/og-image.png'],
+    images: ['/og-image.webp'],
   },
 
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    apple: '/apple-touch-icon.webp',
   },
 
   alternates: {

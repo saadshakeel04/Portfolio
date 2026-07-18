@@ -45,7 +45,7 @@ export function About() {
             >
               <div className="relative overflow-hidden rounded-3xl aspect-[4/3]">
                 <Image
-                  src="/about.png"
+                  src="/about.webp"
                   alt="Working at desk"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
