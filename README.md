@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Saad Shakeel Portfolio
+
+A modern, responsive portfolio website built with **Next.js**, **React**, **TypeScript**, and **Tailwind CSS**. It showcases my projects, skills, experience and provides a way for recruiters and clients to get in touch.
+
+## Features
+
+- Responsive design for mobile, tablet, and desktop
+- Dark & light mode with system preference support
+- Modern glassmorphism-inspired UI
+- Interactive project showcase with live demo and GitHub links
+- Dedicated project case study pages
+- Contact form with server-side email support (Nodemailer)
+- Smooth animations powered by Framer Motion
+- SEO optimized with Next.js Metadata API
+- Fast performance with App Router and static generation
+
+---
+
+## Tech Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Framework | Next.js |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Animation | Framer Motion |
+| Icons | Lucide React, React Icons |
+| Email | Nodemailer |
+
+---
+
+## Sections
+
+- Hero
+- About
+- Skills
+- Experience
+- Projects
+- Resume
+- Contact
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/saadshakeel04/portfolio.git
+
+cd portfolio
+
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+EMAIL_FROM=your_email
+EMAIL_PASSWORD=email_app_generated_password
+```
+
+### Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Production Build
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+app/
+├── api/contact/
+├── projects/[id]/
+├── globals.css
+├── layout.tsx
+└── page.tsx
 
-## Deploy on Vercel
+components/
+├── common/
+├── layout/
+├── sections/
+└── ui/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+lib/
+├── data.ts
+├── types.ts
+└── utils.ts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+public/
+```
+
+---
