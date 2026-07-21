@@ -52,7 +52,7 @@ function ExperienceCard({ exp, index }: { exp: typeof experiences[0]; index: num
         className="flex-1 glass-adaptive rounded-2xl p-6 mb-8 group hover:border-cyan-400/20 transition-all duration-300"
       >
         {/* Header */}
-        <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:justify-between gap-3 mb-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <h3 className="font-bold text-lg leading-tight">{exp.position}</h3>
@@ -68,12 +68,12 @@ function ExperienceCard({ exp, index }: { exp: typeof experiences[0]; index: num
             </div>
           </div>
 
-          <div className="text-right space-y-1">
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground justify-end">
+          <div className="text-left sm:text-right space-y-1">
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground justify-start sm:justify-end">
               <CalendarDays className="w-3.5 h-3.5" />
               {exp.duration}
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground justify-end">
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground justify-start sm:justify-end">
               <MapPin className="w-3.5 h-3.5" />
               {exp.location}
             </div>

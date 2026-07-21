@@ -1,14 +1,39 @@
 'use client';
 
+import { useRouter, usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Mail, ArrowUp, Heart } from 'lucide-react';
+import { Mail, ArrowUp } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 import { navItems, personalInfo } from '@/lib/data';
 
 export function Footer() {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const router = useRouter();
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+const scrollToTop = () => {
+  if (!isHome) {
+    sessionStorage.removeItem('pendingSection');
+    router.push('/');
+    return;
+  }
+  if (window.location.hash) {
+    window.history.replaceState(null, '', window.location.pathname);
+  }
+  window.dispatchEvent(new Event('force-hero-active'));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
   const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    const sectionId = href.slice(1);
+
+    if (!isHome) {
+      sessionStorage.setItem('pendingSection', sectionId);
+      router.push('/', { scroll: false });
+      return;
+    }
+
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const socials = [
@@ -25,9 +50,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="text-2xl font-bold tracking-tight cursor-pointer w-fit"
-              onClick={scrollToTop}
+              className="text-2xl font-bold tracking-tight w-fit"
             >
               <span className="text-gradient-cyan">Saad Shakeel</span>
             </motion.div>
@@ -73,12 +96,12 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">Get in Touch</h4>
             <div className="space-y-2">
-             <a
-  href={`mailto:${personalInfo.email}`}
-  className="inline-block text-sm text-muted-foreground hover:text-cyan-400 transition-colors"
->
-  {personalInfo.email}
-</a>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className="inline-block text-sm text-muted-foreground hover:text-cyan-400 transition-colors"
+              >
+                {personalInfo.email}
+              </a>
               <p className="text-sm text-muted-foreground">{personalInfo.location}</p>
               <div className="flex items-center gap-1.5 mt-3">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />

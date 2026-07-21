@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
+import { useRouter, usePathname } from 'next/navigation';
 import { Moon, Sun, Menu, X, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 import { navItems, personalInfo } from '@/lib/data';
@@ -11,31 +12,96 @@ import Image from 'next/image';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('hero');
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
 
+    if (!isHome) return; 
+
+    const updateActiveSection = () => {
       const sections = navItems.map((item) => item.href.slice(1));
-      for (const section of sections.reverse()) {
+      const firstEl = document.getElementById(sections[0]);
+
+      if (firstEl && window.scrollY < firstEl.offsetTop - 120) {
+        setActiveSection('hero');
+        if (window.location.hash) {
+          window.history.replaceState(null, '', window.location.pathname);
+        }
+        return;
+      }
+
+      for (const section of [...sections].reverse()) {
         const el = document.getElementById(section);
         if (el && window.scrollY >= el.offsetTop - 120) {
           setActiveSection(section);
+          const newHash = `#${section}`;
+          if (window.location.hash !== newHash) {
+            window.history.replaceState(null, '', newHash);
+          }
           break;
         }
       }
     };
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+
+      // Debounce the active-section 
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+      debounceRef.current = setTimeout(updateActiveSection, 120);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    updateActiveSection(); // set initial state on mount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, [isHome]);
+
+  useEffect(() => {
+    if (isHome) return;
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHome]);
+
+  const goHome = () => {
+    if (!isHome) {
+      sessionStorage.removeItem('pendingSection');
+      router.push('/');
+      return;
+    }
+    //  scroll to top and Hero as active,
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    setActiveSection('hero');
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const scrollTo = (href: string) => {
-    const el = document.querySelector(href);
+    const sectionId = href.slice(1);
+
+    if (!isHome) {
+      //The homepage reads this on mount and scrolls to it.
+      sessionStorage.setItem('pendingSection', sectionId);
+      router.push('/', { scroll: false });
+      setMobileOpen(false);
+      return;
+    }
+
+    const el = document.getElementById(sectionId);
     el?.scrollIntoView({ behavior: 'smooth' });
     setMobileOpen(false);
   };
@@ -57,25 +123,25 @@ export function Navbar() {
         >
           {/* Logo */}
           <motion.button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={goHome}
             className="text-xl font-bold tracking-tight"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-           <Image
-                             src="/logo.svg"
-                             alt="Saad Shakeel logo"
-                             width={80}
-                             height={80}
-                             priority
-                             className="relative object-contain drop-shadow-[0_0_25px_rgba(34,211,238,0.35)]"
-                           />
+            <Image
+              src="/logo.svg"
+              alt="Saad Shakeel logo"
+              width={80}
+              height={80}
+              priority
+              className="relative object-contain drop-shadow-[0_0_25px_rgba(34,211,238,0.35)]"
+            />
           </motion.button>
 
           {/* Desktop Nav */}
           <ul className="hidden md:flex items-center gap-1">
             {navItems.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
+              const isActive = isHome && activeSection === item.href.slice(1);
               return (
                 <li key={item.href}>
                   <motion.button
@@ -174,7 +240,7 @@ export function Navbar() {
               className="md:hidden bg-background/95 backdrop-blur-2xl border border-border/50 rounded-2xl mt-2 p-2"
             >
               {navItems.map((item, i) => {
-                const isActive = activeSection === item.href.slice(1);
+                const isActive = isHome && activeSection === item.href.slice(1);
                 return (
                   <motion.button
                     key={item.href}
