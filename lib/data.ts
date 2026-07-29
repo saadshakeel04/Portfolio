@@ -13,7 +13,7 @@ export const personalInfo = {
   tagline:
     "Building responsive, scalable web applications with clean code and powerful engineering.",
   email: "ultrasaad04@gmail.com",
-  location: "Islamabad, Pakistan",
+  location: "Pakistan",
   github: "https://github.com/saadshakeel04",
   linkedin: "https://www.linkedin.com/in/saad-shakeel-419063259/",
   instagram: "https://www.instagram.com/saad.dev04/",
