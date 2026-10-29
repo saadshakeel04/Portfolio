@@ -139,7 +139,7 @@ export const experiences: Experience[] = [
   {
     id: "1",
     company: "Softations",
-    position: "Junior Frontend Engineer",
+    position: "Software Engineer",
     duration: "Nov 2025 – Present",
     startDate: "2025-11",
     endDate: "Present",
@@ -147,19 +147,21 @@ export const experiences: Experience[] = [
     type: "Full-time",
     current: true,
     description: [
-      "Developed and maintained responsive web applications using React.js and Next.js framework architectures.",
-      "Integrated GraphQL endpoints and REST APIs to manage, bind, and render data dynamically and efficiently.",
-      "Debugged complex structural issues, linting configurations, and layout problems to secure frontend reliability.",
-      "Collaborated within fast-paced Agile development sprints utilizing Jira and Git based version workflows.",
+      "Rebuilt the Source Inputs module using React, TanStack Table and GraphQL, delivering tabbed views for raw materials, primary lots, logistics units and batch lots with client-side search, sorting and pagination.",
+      "Developed a GS1 Linktype Manager for grouped resource connections, implementing CRUD mutations, public/private visibility controls, source and format aggregation and resolver URL previews.",
+      "Standardized raw-material weight handling across product editing, manufacturing, list, transaction and PDF views, correctly distinguishing unrecorded weights from valid zero-weight states.",
+      "Extended a brand creation wizard with required-field validation, logo and color selection, Shopify/WooCommerce platform integration and persisted form recovery after page refresh.",
+      "Built OAuth-based Google and Outlook calendar and inbox integrations with real-time Firestore synchronization, plus AI-assisted task management using voice and function-call workflows.",
     ],
     technologies: [
       "React.js",
-      "Next.js",
-      "GraphQL",
       "TypeScript",
-      "Tailwind CSS",
-      "Git",
-      "Jira",
+      "GraphQL",
+      "Apollo Client",
+      "TanStack Table",
+      "Firestore",
+      "OAuth",
+      "AI Workflows",
     ],
   },
   {
@@ -271,7 +273,7 @@ export const projects: Project[] = [
       "Cross-platform React Native app transforming images to line art using GANs with automated video pipelines.",
     description:
       "A cutting-edge mobile application built with React Native and Expo Router that handles image vector processing. It includes automated CI/CD workflows, secure user token structures, and asynchronous background pipelines.",
-    thumbnail: "/sketchwise.webp",
+    thumbnail: "/projects/sketchwise.webp",
     category: "Final Year Project",
     techStack: [
       "React Native",
@@ -305,7 +307,7 @@ export const projects: Project[] = [
       "Responsive monitoring application for application metrics, candidate flows, and job data visualization.",
     description:
       "A comprehensive, single-page application employment dashboard engineered to provide companies and candidates real-time monitoring of application stages, job board statuses, and workflow metrics.",
-    thumbnail: "/internhub.webp",
+    thumbnail: "/projects/internhub.webp",
     github: "https://github.com/saadshakeel04/InternHub-Dashboard",
     liveDemo: "https://intern-hub-dashboard.vercel.app/",
     category: "Dashboard / Analytics",
@@ -339,7 +341,7 @@ export const projects: Project[] = [
       "Scalable booking architecture configured via Model-View-Controller patterns.",
     description:
       "A deep full-stack travel scheduling application engineered around strict MVC design principles to manage booking details, payment flows, customer queries, and multi-user accounts safely.",
-    thumbnail: "/tripverse.webp",
+    thumbnail: "/projects/tripverse.webp",
     category: "Enterprise Application",
     demoVideo: "/tripverse.mp4",
     techStack: ["C#", "ASP.NET Web", "MVC Architecture", "MySQL", "XAML"],
@@ -363,7 +365,7 @@ export const projects: Project[] = [
       "Clean, full-featured personal notes environment designed with optimized CRUD actions.",
     description:
       "A modern, responsive productivity tool that gives users a distraction-free digital workplace to document thoughts, structure to-do groups, and handle continuous data management with ease.",
-    thumbnail: "/notely.webp",
+    thumbnail: "/projects/notely.webp",
     github: "https://github.com/saadshakeel04/Notes-Management-System",
     liveDemo: "https://notes-management-system-three.vercel.app/",
     category: "Productivity Application",
@@ -397,7 +399,7 @@ export const projects: Project[] = [
       "A dedicated, highly accessible e-commerce operational tool custom-tailored to accelerate logistics center processing, package sorting, shipment verification, and delivery logging.",
     overview:
       "Canada Prep Solution is a logistics and warehouse management platform developed with Node.js, Express.js, EJS and MongoDB to streamline package preparation and shipment workflows. The application helps warehouse staff efficiently manage inventory, organize product packaging, verify shipment records and monitor operational processes through an intuitive web interface. By optimizing order handling, package tracking and inventory management, the platform improves workflow efficiency while reducing processing errors in day-to-day logistics operations.",
-    thumbnail: "/prep.webp",
+    thumbnail: "/projects/canada-prep.webp",
     github: "https://github.com/WardahFayyaz/PrepWebsite",
     liveDemo: "https://prep-website-xi.vercel.app/",
     category: "E-commerce Platform",
